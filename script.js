@@ -105,7 +105,18 @@ function startExploration() {
 }
 
 // Planet hover effects
-(nithya)
+document.querySelectorAll('.planet').forEach(planet => {
+    planet.addEventListener('mouseenter', function() {
+        this.style.transform = 'scale(1.5)';
+        this.style.transition = 'transform 0.3s ease';
+        this.style.boxShadow = '0 0 20px rgba(255,255,255,0.8)';
+    });
+    
+    planet.addEventListener('mouseleave', function() {
+        this.style.transform = 'scale(1)';
+        this.style.boxShadow = 'none';
+    });
+});
 
 // Smooth scrolling for navigation
 document.querySelectorAll('.nav-item').forEach(item => {
