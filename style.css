@@ -165,7 +165,31 @@ body {
 .mars { width: 16px; height: 16px; background: #cd5c5c; }
 .jupiter { width: 35px; height: 35px; background: linear-gradient(45deg, #d2691e, #b8860b); }
 
-(NITHYA)
+.info-panel {
+    position: fixed;
+    right: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.8);
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid rgba(0,255,255,0.3);
+    backdrop-filter: blur(10px);
+    max-width: 300px;
+    z-index: 10;
+}
+
+.info-panel h3 {
+    color: #00ffff;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.info-panel p {
+    line-height: 1.6;
+    opacity: 0.9;
+    margin-bottom: 10px;
+}
 
 .floating-elements {
     position: fixed;
