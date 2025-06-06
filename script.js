@@ -77,8 +77,15 @@ function toggleAnimation() {
     }
 }
 
-(charitha)
-
+function speedUp() {
+    currentSpeed = currentSpeed >= 4 ? 0.5 : currentSpeed * 2;
+    const orbits = document.querySelectorAll('.orbit');
+    
+    orbits.forEach((orbit, index) => {
+        const baseDuration = [5, 8, 12, 16, 20][index];
+        orbit.style.animationDuration = (baseDuration / currentSpeed) + 's';
+    });
+}
 function resetView() {
     currentSpeed = 1;
     const orbits = document.querySelectorAll('.orbit');
@@ -126,7 +133,24 @@ document.querySelectorAll('.nav-item').forEach(item => {
     });
 });
 
-(shreya)
+// Add some interactive sound effects (visual feedback)
+document.addEventListener('click', (e) => {
+    const ripple = document.createElement('div');
+    ripple.style.position = 'absolute';
+    ripple.style.left = e.clientX - 25 + 'px';
+    ripple.style.top = e.clientY - 25 + 'px';
+    ripple.style.width = '50px';
+    ripple.style.height = '50px';
+    ripple.style.border = '2px solid #00ffff';
+    ripple.style.borderRadius = '50%';
+    ripple.style.pointerEvents = 'none';
+    ripple.style.animation = 'ripple 0.6s ease-out';
+    ripple.style.zIndex = '9999';
+    
+    document.body.appendChild(ripple);
+    
+    setTimeout(() => ripple.remove(), 600);
+});
 
 // Initialize everything when the page loads
 document.addEventListener('DOMContentLoaded', function() {
